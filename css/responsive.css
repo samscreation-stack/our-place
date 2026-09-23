@@ -1,0 +1,1238 @@
+/* =========================================================
+   OUR PLACE
+   RESPONSIVE SYSTEM
+========================================================= */
+
+/* =========================================================
+   DESKTOP COMPOSITION
+========================================================= */
+
+@media (min-width: 1101px) {
+  .hero-copy {
+    left: 48.5%;
+    width: 385px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(68px, 6vw, 92px);
+  }
+
+  .hero-polaroid-one {
+    right: 5%;
+    width: 182px;
+  }
+
+  .hero-note-paper {
+    right: 5.5%;
+    width: 188px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  :root {
+    --rail-width: 62px;
+  }
+
+  .hero-scene {
+    min-height: 720px;
+  }
+
+  .hero-illustration {
+    left: 0;
+
+    width: 53vw;
+  }
+
+  .hero-copy {
+    left: 48%;
+
+    width: 40vw;
+  }
+
+  .hero-polaroid-one {
+    right: 3%;
+
+    width: 190px;
+  }
+
+  .hero-note-paper {
+    right: 2%;
+
+    width: 180px;
+  }
+
+  .memory-photo-wide {
+    left: 10%;
+  }
+
+  .memory-handnote {
+    right: 7%;
+  }
+
+  .poem-paper {
+    left: 8%;
+  }
+
+  .memory-photo-small {
+    right: 8%;
+  }
+}
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 760px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .archive-rail {
+    position: fixed;
+
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 67px;
+
+    flex-direction: row;
+
+    padding: 0 10px;
+
+    border-right: none;
+
+    border-top: 1px solid rgba(58, 46, 37, 0.14);
+
+    background: rgba(239, 230, 219, 0.93);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .rail-brand,
+  .rail-bottom {
+    display: none;
+  }
+
+  .rail-menu {
+    width: 100%;
+
+    flex-direction: row;
+
+    justify-content: space-around;
+  }
+
+  .rail-link {
+    width: 62px;
+    height: 52px;
+  }
+
+  .rail-link.active::before {
+    top: 0;
+    left: 50%;
+
+    width: 23px;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 5px 5px;
+  }
+
+  .site-main {
+    margin-left: 0;
+
+    padding-bottom: 67px;
+  }
+
+  .top-header {
+    left: 0;
+
+    grid-template-columns: 1fr auto;
+
+    padding: 0 18px;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .mobile-brand-main {
+    font-size: 24px;
+  }
+
+  .mobile-brand-small {
+    font-size: 15px;
+  }
+
+  .add-memory-text {
+    display: none;
+  }
+
+  .add-memory {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .add-memory-plus {
+    font-size: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE WALL
+========================================================= */
+
+@media (max-width: 760px) {
+  .hero-scene {
+    min-height: 970px;
+  }
+
+  .hero-illustration {
+    left: 50%;
+
+    bottom: 245px;
+
+    width: min(95vw, 520px);
+
+    transform: translateX(-50%);
+  }
+
+  .hero-copy {
+    top: 65px;
+
+    left: 22px;
+
+    width: calc(100% - 44px);
+
+    text-align: center;
+  }
+
+  .hero-kicker {
+    font-size: 8px;
+
+    letter-spacing: 0.23em;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(58px, 15vw, 90px);
+  }
+
+  .hero-copy h1 span {
+    margin-left: 0;
+  }
+
+  .hero-description {
+    max-width: 340px;
+
+    margin: 25px auto 0;
+
+    font-size: 18px;
+  }
+
+  .hero-divider {
+    margin: 22px auto 0;
+  }
+
+  .hero-polaroid-one {
+    top: auto;
+    right: 8%;
+
+    bottom: 40px;
+
+    width: 150px;
+
+    transform: rotate(4deg);
+  }
+
+  .hero-note-paper {
+    top: auto;
+    left: 6%;
+
+    right: auto;
+
+    bottom: 55px;
+
+    width: 145px;
+
+    padding: 33px 17px 16px;
+
+    transform: rotate(-5deg);
+  }
+
+  .hero-note-paper p {
+    font-size: 14px;
+  }
+
+  .hero-note-paper small {
+    font-size: 6px;
+  }
+
+  .hero-botanical {
+    left: -50px;
+
+    bottom: 150px;
+
+    opacity: 0.45;
+  }
+
+  /* =============================================
+       WALL MEMORIES
+    ============================================== */
+
+  .wall-memories {
+    padding: 20px 20px 100px;
+  }
+
+  .wall-memory {
+    min-height: auto;
+
+    padding: 70px 0 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+  }
+
+  .memory-date-stamp {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    align-self: flex-start;
+
+    margin-left: 8px;
+  }
+
+  .memory-large,
+  .memory-medium,
+  .memory-wide,
+  .memory-final {
+    min-height: auto;
+  }
+
+  .memory-photo-wide,
+  .memory-handnote,
+  .poem-paper,
+  .memory-photo-small,
+  .small-note,
+  .memory-photo-mid,
+  .memory-photo-bed,
+  .pink-paper,
+  .botanical-card {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    width: min(100%, 360px);
+
+    transform: rotate(0deg);
+  }
+
+  .memory-photo-wide .photo-paper,
+  .memory-photo-bed .photo-paper {
+    width: 100%;
+  }
+
+  .memory-photo-wide {
+    transform: rotate(-1deg);
+  }
+
+  .memory-handnote {
+    transform: rotate(2deg);
+  }
+
+  .poem-paper {
+    padding: 45px 32px 35px;
+  }
+
+  .memory-photo-small {
+    max-width: 260px;
+
+    align-self: flex-end;
+
+    transform: rotate(2deg);
+  }
+
+  .small-note {
+    align-self: flex-start;
+
+    max-width: 240px;
+  }
+
+  .memory-photo-mid {
+    max-width: 280px;
+
+    transform: rotate(-2deg);
+  }
+
+  .botanical-card {
+    width: 100px;
+
+    height: 160px;
+
+    align-self: flex-end;
+  }
+
+  .pink-paper {
+    max-width: 280px;
+  }
+
+  .wall-end {
+    min-height: 130px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .hero-scene {
+    min-height: 900px;
+  }
+
+  .hero-copy h1 {
+    font-size: 56px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-illustration {
+    width: 103vw;
+
+    bottom: 210px;
+  }
+
+  .hero-polaroid-one {
+    right: 5%;
+
+    width: 128px;
+
+    bottom: 34px;
+  }
+
+  .hero-note-paper {
+    left: 3%;
+
+    width: 130px;
+
+    bottom: 55px;
+  }
+
+  .hero-note-paper p {
+    font-size: 13px;
+  }
+
+  .paper-type {
+    font-size: 8px;
+  }
+
+  .poem-paper h2 {
+    font-size: 38px;
+  }
+
+  .poem-text {
+    font-size: 18px;
+  }
+
+  .torn-paper p {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   PHASE 1.3
+   MOBILE MATERIAL / COMPOSITION
+========================================================= */
+
+@media (max-width: 760px) {
+  /* ---------------------------------------------
+       WALL EDGE
+    --------------------------------------------- */
+
+  .memory-wall::before {
+    width: 9px;
+  }
+
+  /* ---------------------------------------------
+       BOTANICALS
+    --------------------------------------------- */
+
+  .wall-botanical-top {
+    top: 430px;
+
+    left: -58px;
+
+    width: 105px;
+    height: 190px;
+
+    opacity: 0.28;
+  }
+
+  .wall-botanical-bottom {
+    right: -58px;
+
+    bottom: 230px;
+
+    width: 110px;
+    height: 205px;
+
+    opacity: 0.28;
+  }
+
+  /* ---------------------------------------------
+       DYNAMIC MEMORY LAYOUT
+    --------------------------------------------- */
+
+  .dynamic-memory .memory-photo,
+  .dynamic-memory .paper-memory,
+  .dynamic-memory .small-note {
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+
+  .dynamic-memory .memory-photo,
+  .dynamic-memory.layout-1 .memory-photo,
+  .dynamic-memory.layout-2 .memory-photo,
+  .dynamic-memory.layout-3 .memory-photo,
+  .dynamic-memory.layout-4 .memory-photo,
+  .dynamic-memory.layout-5 .memory-photo {
+
+    width:
+      min(100%, 350px);
+
+  }
+
+
+  .dynamic-memory .paper-memory {
+
+    width:
+      min(100%, 350px);
+
+  }
+
+
+  .dynamic-memory .small-note {
+
+    width:
+      min(100%, 245px);
+
+  }
+
+  /* ---------------------------------------------
+       REMOVE DESKTOP POSITION DIFFERENCES
+    --------------------------------------------- */
+
+  .layout-1 .memory-photo,
+  .layout-2 .memory-photo,
+  .layout-3 .memory-photo,
+  .layout-4 .memory-photo,
+  .layout-5 .memory-photo,
+  .layout-1 .paper-memory,
+  .layout-2 .paper-memory,
+  .layout-3 .paper-memory,
+  .layout-4 .paper-memory,
+  .layout-5 .paper-memory,
+  .layout-1 .small-note,
+  .layout-2 .small-note,
+  .layout-3 .small-note,
+  .layout-4 .small-note,
+  .layout-5 .small-note {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------------------------------------------
+       SOFT TAPE
+    --------------------------------------------- */
+
+  .photo-memory::after,
+  .memory-handnote::after,
+  .poem-paper::after,
+  .small-note::after,
+  .memory-photo::after {
+    width: 58px;
+
+    height: 18px;
+
+    top: -8px;
+  }
+
+  /* ---------------------------------------------
+       DATE STAMP
+    --------------------------------------------- */
+
+  .memory-date-stamp::before {
+    display: none;
+  }
+
+  /* ---------------------------------------------
+       LIGHT PATCHES
+    --------------------------------------------- */
+
+  .wall-memories::before {
+    left: -120px;
+
+    width: 250px;
+    height: 200px;
+
+    opacity: 0.55;
+  }
+
+  .wall-memories::after {
+    right: -120px;
+
+    width: 250px;
+    height: 200px;
+
+    opacity: 0.55;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .wall-botanical-top,
+  .wall-botanical-bottom {
+    display: none;
+  }
+
+  .dynamic-memory .memory-photo {
+    width: min(100%, 320px);
+  }
+
+  .dynamic-memory .paper-memory {
+    width: min(100%, 320px);
+
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* =========================================================
+   PHASE 1.4
+   MOBILE MEMORY OBJECTS
+========================================================= */
+
+@media (max-width: 760px) {
+  /* =====================================================
+       LETTER
+    ===================================================== */
+
+  .letter-memory {
+    width: min(100%, 350px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: rotate(-1deg);
+  }
+
+  .letter-paper {
+    padding: 40px 30px 35px;
+  }
+
+  .letter-paper h2 {
+    font-size: 32px;
+  }
+
+  .letter-text {
+    font-size: 18px;
+  }
+
+  /* =====================================================
+       PHOTO CLUSTER
+    ===================================================== */
+
+  .photo-cluster {
+    width: min(100%, 350px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: rotate(0deg);
+  }
+
+  .cluster-photos {
+    height: 265px;
+  }
+
+  .cluster-photo {
+    width: 165px;
+  }
+
+  .cluster-1 {
+    left: 0;
+  }
+
+  .cluster-2 {
+    left: 82px;
+  }
+
+  .cluster-3 {
+    left: 165px;
+  }
+
+  .cluster-caption {
+    margin-left: 10px;
+  }
+
+  .cluster-caption h2 {
+    font-size: 25px;
+  }
+
+  /* =====================================================
+       MILESTONE
+    ===================================================== */
+
+  .milestone-memory {
+    width: min(100%, 350px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    transform: rotate(0deg);
+  }
+
+  .milestone-ring {
+    width: 90px;
+    height: 90px;
+  }
+
+  .milestone-symbol {
+    font-size: 30px;
+  }
+
+  .milestone-content h2 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .letter-paper {
+    padding: 36px 24px 30px;
+  }
+
+  .letter-paper h2 {
+    font-size: 29px;
+  }
+
+  .cluster-photos {
+    height: 235px;
+  }
+
+  .cluster-photo {
+    width: 145px;
+  }
+
+  .cluster-2 {
+    left: 68px;
+  }
+
+  .cluster-3 {
+    left: 136px;
+  }
+
+  .milestone-content h2 {
+    font-size: 29px;
+  }
+}
+
+/* =========================================================
+   MOBILE WIDTH SAFETY
+   Fix large memory objects overflowing the screen
+========================================================= */
+
+@media (max-width: 760px) {
+  /*
+        Every dynamically generated memory must stay
+        inside the available wall width.
+    */
+
+  .dynamic-memory,
+  .dynamic-memory .memory-photo,
+  .dynamic-memory .photo-paper,
+  .dynamic-memory .paper-memory,
+  .dynamic-memory .small-note,
+  .dynamic-memory .letter-memory,
+  .dynamic-memory .letter-paper,
+  .dynamic-memory .photo-cluster,
+  .dynamic-memory .milestone-memory {
+    max-width: 100%;
+  }
+
+  /*
+        These rules intentionally use !important
+        because the desktop nth-child layout rules
+        have higher CSS specificity.
+    */
+
+  .dynamic-memory .memory-photo,
+  .dynamic-memory:nth-child(4n + 1) .memory-photo,
+  .dynamic-memory:nth-child(4n + 2) .memory-photo,
+  .dynamic-memory:nth-child(4n + 3) .memory-photo,
+  .dynamic-memory:nth-child(4n + 4) .memory-photo {
+    width: min(100%, 350px) !important;
+  }
+
+  /*
+        Prevent the actual paper from becoming wider
+        than the image container.
+    */
+
+  .dynamic-memory .photo-paper {
+    width: 100%;
+  }
+
+  /*
+        The image itself must never exceed
+        its containing paper.
+    */
+
+  .dynamic-memory .photo-image {
+    width: 100%;
+  }
+
+  /*
+        Extra protection for very narrow phones.
+    */
+
+  .dynamic-memory .memory-photo-wide {
+    width: min(100%, 350px) !important;
+  }
+}
+
+/* =========================================================
+   SMALL PHONE WIDTH
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .dynamic-memory .memory-photo,
+  .dynamic-memory.layout-1 .memory-photo,
+  .dynamic-memory.layout-2 .memory-photo,
+  .dynamic-memory.layout-3 .memory-photo,
+  .dynamic-memory.layout-4 .memory-photo,
+  .dynamic-memory.layout-5 .memory-photo {
+
+    width:
+      min(100%, 320px);
+
+  }
+
+
+  .dynamic-memory {
+
+    min-width: 0;
+
+  }
+
+
+  .dynamic-memory .photo-paper {
+
+    width: 100%;
+
+    padding:
+      9px 9px 13px;
+
+  }
+
+}
+
+/* =========================================================
+   PHASE 1.5
+   MEMORY VIEWER — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .memory-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .memory-modal {
+    width: 100%;
+
+    max-width: none;
+
+    max-height: 94vh;
+
+    padding: 54px 22px 28px;
+
+    box-shadow: 0 -18px 50px rgba(39, 29, 23, 0.24);
+
+    transform: translateY(30px);
+  }
+
+  .memory-overlay.is-open .memory-modal {
+    transform: translateY(0);
+  }
+
+  /* =====================================================
+       PHOTO
+    ===================================================== */
+
+  .modal-photo-detail {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .modal-photo-frame {
+    width: 100%;
+  }
+
+  .modal-photo-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .modal-memory-meta h2 {
+    max-width: none;
+
+    font-size: 48px;
+  }
+
+  .modal-description {
+    font-size: 17px;
+  }
+
+  /* =====================================================
+       LITERARY
+    ===================================================== */
+
+  .modal-literary-detail {
+    padding: 25px 8px 10px;
+  }
+
+  .modal-literary-detail h2 {
+    font-size: clamp(45px, 15vw, 64px);
+  }
+
+  .modal-literary-text {
+    font-size: 20px;
+  }
+
+  /* =====================================================
+       NOTE
+    ===================================================== */
+
+  .modal-note-detail {
+    padding: 55px 28px 45px;
+  }
+
+  .modal-note-text {
+    font-size: 31px;
+  }
+
+  /* =====================================================
+       CLUSTER
+    ===================================================== */
+
+  .modal-cluster-images {
+    min-height: 245px;
+  }
+
+  .modal-cluster-image {
+    width: 150px;
+  }
+
+  .modal-cluster-image:nth-child(1) {
+    transform: translateX(34px) rotate(-7deg);
+  }
+
+  .modal-cluster-image:nth-child(2) {
+    transform: translateY(-7px) rotate(1deg);
+  }
+
+  .modal-cluster-image:nth-child(3) {
+    transform: translateX(-34px) rotate(7deg);
+  }
+
+  .modal-cluster-detail h2 {
+    font-size: 32px;
+  }
+
+  /* =====================================================
+       MILESTONE
+    ===================================================== */
+
+  .modal-milestone-symbol {
+    width: 90px;
+    height: 90px;
+
+    font-size: 33px;
+  }
+
+  .modal-milestone-detail h2 {
+    font-size: 43px;
+  }
+
+  /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+  .memory-modal-navigation {
+    margin-top: 30px;
+  }
+
+  .memory-modal-nav {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .memory-modal {
+    padding: 50px 16px 22px;
+  }
+
+  .memory-modal h2 {
+    font-size: 42px;
+  }
+
+  .modal-literary-text {
+    font-size: 18px;
+  }
+
+  .modal-note-text {
+    font-size: 27px;
+  }
+
+  .modal-cluster-image {
+    width: 125px;
+  }
+}
+
+/* =========================================================
+   PHASE 1.6
+   COMPOSER — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .composer-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .composer-modal {
+    width: 100%;
+
+    max-height: 94vh;
+
+    padding: 30px 18px 25px;
+  }
+
+  .composer-header h2 {
+    font-size: 45px;
+  }
+
+  /* =============================================
+       TYPE SELECTOR
+    ============================================== */
+
+  .memory-type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+  .memory-type-option {
+    min-height: 92px;
+
+    padding: 14px;
+  }
+
+  /* =============================================
+       DATE / TIME
+    ============================================== */
+
+  .composer-field-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  /* =============================================
+       FILE PREVIEW
+    ============================================== */
+
+  .file-preview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* =============================================
+       ACTIONS
+    ============================================== */
+
+  .composer-actions {
+    position: sticky;
+
+    bottom: -1px;
+
+    background: linear-gradient(to top, #ece0d1 65%, rgba(236, 224, 209, 0));
+
+    padding-top: 30px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .composer-modal {
+    padding: 26px 14px 22px;
+  }
+
+  .memory-type-option {
+    min-height: 87px;
+
+    padding: 12px;
+  }
+
+  .type-name {
+    font-size: 11px;
+  }
+
+  .type-description {
+    font-size: 9px;
+  }
+
+  .composer-header h2 {
+    font-size: 40px;
+  }
+
+  .composer-save {
+    padding: 11px 15px;
+  }
+}
+
+/* =========================================================
+   PHASE 1.7
+   EDIT / DELETE — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  /* =====================================================
+       MEMORY ACTIONS
+    ===================================================== */
+
+  .memory-modal-actions {
+    margin-top: 24px;
+  }
+
+  .memory-action-edit,
+  .memory-action-delete {
+    flex: 0 0 auto;
+
+    padding: 9px 12px;
+  }
+
+  /* =====================================================
+       DELETE MODAL
+    ===================================================== */
+
+  .delete-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .delete-modal {
+    width: 100%;
+
+    padding: 38px 20px 27px;
+
+    box-shadow: 0 -20px 55px rgba(40, 29, 23, 0.24);
+
+    transform: translateY(25px);
+  }
+
+  .delete-overlay.is-open .delete-modal {
+    transform: translateY(0);
+  }
+
+  .delete-modal h2 {
+    font-size: 43px;
+  }
+
+  .delete-actions {
+    align-items: stretch;
+
+    flex-direction: column-reverse;
+  }
+
+  .delete-confirm,
+  .delete-cancel {
+    width: 100%;
+
+    min-height: 42px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .memory-modal-actions {
+    gap: 7px;
+  }
+
+  .memory-action-edit,
+  .memory-action-delete {
+    font-size: 9px;
+
+    padding: 8px 10px;
+  }
+
+  .delete-modal {
+    padding: 34px 16px 24px;
+  }
+
+  .delete-modal h2 {
+    font-size: 39px;
+  }
+}

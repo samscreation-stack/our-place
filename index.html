@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Our Place — A Memory Archive</title>
+
+        <meta
+            name="description"
+            content="A private place for the memories, letters, photographs and little moments we choose to keep."
+        />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Kalam:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+    </head>
+
+    <body class="auth-loading">
+
+    <!-- =================================================
+         PRIVATE AUTHENTICATION GATE
+    ================================================== -->
+
+    <div
+        class="auth-gate is-open"
+        id="authGate"
+        aria-hidden="false"
+    >
+
+        <div class="auth-gate-backdrop"></div>
+
+
+        <section
+            class="auth-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="authTitle"
+        >
+
+            <!-- Illustration -->
+
+            <div class="auth-illustration">
+
+                <div class="auth-illustration-glow"></div>
+
+                <img
+                    src="assets/images/sunflower.svg"
+                    alt="Illustration of us"
+                />
+
+            </div>
+
+
+            <!-- Loading state -->
+
+            <div
+                class="auth-loading-state"
+                id="authLoading"
+            >
+
+                <p class="auth-kicker">
+                    OUR PRIVATE PLACE
+                </p>
+
+                <h1>
+                    Opening
+                    <span>our archive.</span>
+                </h1>
+
+                <div
+                    class="auth-loader"
+                    aria-hidden="true"
+                >
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- Login -->
+
+            <div
+                class="auth-login"
+                id="authLogin"
+                hidden
+            >
+
+                <p class="auth-kicker">
+                    OUR PRIVATE PLACE
+                </p>
+
+                <h1 id="authTitle">
+                    Welcome
+                    <span>back.</span>
+                </h1>
+
+                <p class="auth-description">
+                    The memories here are just for us.
+                </p>
+
+
+                <form
+                    class="auth-form"
+                    id="authForm"
+                >
+
+                    <label class="auth-field">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <input
+                            id="authEmail"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required
+                        />
+
+                    </label>
+
+
+                    <label class="auth-field">
+
+                        <span>
+                            Password
+                        </span>
+
+                        <input
+                            id="authPassword"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="Your password"
+                            required
+                        />
+
+                    </label>
+
+
+                    <p
+                        class="auth-error"
+                        id="authError"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button
+                        class="auth-submit"
+                        id="authSubmit"
+                        type="submit"
+                    >
+
+                        <span class="auth-submit-label">
+                            Enter our place
+                        </span>
+
+                        <span class="auth-submit-arrow">
+                            →
+                        </span>
+
+                        <span
+                            class="auth-submit-spinner"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+                </form>
+
+
+                <p class="auth-footer-note">
+                    A private archive for the two of us.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <div class="site">
+            <!-- =================================================
+         LEFT ARCHIVE RAIL
+    ================================================== -->
+
+            <aside class="archive-rail">
+                <div class="rail-brand">
+                    <div class="rail-logo-wrap">
+                        <img src="assets/images/couple-illustration.png" alt="Our Place" />
+                    </div>
+
+                    <span class="rail-brand-text"> our place </span>
+                </div>
+
+                <div class="rail-menu">
+                    <button
+    class="rail-link active"
+    type="button"
+    data-view="wall"
+    aria-label="Wall"
+>
+    <span class="rail-icon">⌂</span>
+    <span class="rail-label">Wall</span>
+</button>
+
+                    <button
+    class="rail-link"
+    type="button"
+    data-view="timeline"
+    aria-label="Journey"
+>
+    <span class="rail-icon">◌</span>
+    <span class="rail-label">Journey</span>
+</button>
+
+                    <button
+    class="rail-link"
+    type="button"
+    data-view="letters"
+    aria-label="Letters"
+>
+    <span class="rail-icon">✉</span>
+    <span class="rail-label">Letters</span>
+</button>
+
+                    <button
+    class="rail-link"
+    type="button"
+    data-view="room"
+    aria-label="Our Room"
+>
+    <span class="rail-icon">♡</span>
+    <span class="rail-label">Our Room</span>
+<button
+    class="rail-link"
+    data-view="settings"
+    type="button"
+    aria-label="Settings"
+>
+    <span class="rail-icon">⚙</span>
+    <span class="rail-label">Settings</span>
+</button>
+                </div>
+            </aside>
+
+            <!-- =================================================
+         MAIN SITE
+    ================================================== -->
+
+            <div class="site-main">
+                <!-- =============================================
+             TOP HEADER
+        ============================================== -->
+
+                <header class="top-header">
+                    <div class="mobile-brand">
+                        <img
+                            class="header-logo"
+                            src="assets/images/couple-illustration.png"
+                            alt="Our Place"
+                        />
+
+                        <div class="brand-wordmark">
+                            <span class="mobile-brand-small"> our </span>
+
+                            <span class="mobile-brand-main"> place </span>
+                        </div>
+                    </div>
+
+                    <div class="header-center">
+                        <span class="header-chapter"> OUR MEMORY ARCHIVE </span>
+                    </div>
+
+                    <div class="header-actions">
+
+    <button
+        class="add-memory"
+        id="addMemoryButton"
+        type="button"
+        aria-label="Add memory"
+    >
+        <span class="add-memory-plus">+</span>
+        <span class="add-memory-text">
+            Add memory
+        </span>
+    </button>
+
+</div>
+                </header>
+
+                <!-- =============================================
+             WALL VIEW
+        ============================================== -->
+
+                <main class="view active-view" id="wall-view">
+                    <section class="memory-wall">
+                        <!-- =================================================
+                     WALL GRAIN / LIGHT
+                ================================================== -->
+
+                        <div class="wall-light"></div>
+
+                        <div class="wall-grain"></div>
+
+                        <!-- =================================================
+     DECORATIVE WALL BOTANICALS
+================================================== -->
+
+                        <div class="wall-botanical wall-botanical-top">
+                            <svg viewBox="0 0 220 360" aria-hidden="true">
+                                <path
+                                    d="M110 350 C112 245 105 125 50 20"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+
+                                <ellipse
+                                    cx="91"
+                                    cy="260"
+                                    rx="17"
+                                    ry="38"
+                                    transform="rotate(-31 91 260)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="100"
+                                    cy="218"
+                                    rx="16"
+                                    ry="37"
+                                    transform="rotate(29 100 218)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="77"
+                                    cy="179"
+                                    rx="15"
+                                    ry="34"
+                                    transform="rotate(-35 77 179)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="79"
+                                    cy="140"
+                                    rx="14"
+                                    ry="34"
+                                    transform="rotate(30 79 140)"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </div>
+
+                        <div class="wall-botanical wall-botanical-bottom">
+                            <svg viewBox="0 0 220 360" aria-hidden="true">
+                                <path
+                                    d="M105 350 C105 250 118 150 174 34"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+
+                                <ellipse
+                                    cx="122"
+                                    cy="266"
+                                    rx="17"
+                                    ry="38"
+                                    transform="rotate(31 122 266)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="112"
+                                    cy="222"
+                                    rx="16"
+                                    ry="35"
+                                    transform="rotate(-30 112 222)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="136"
+                                    cy="181"
+                                    rx="15"
+                                    ry="34"
+                                    transform="rotate(32 136 181)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="137"
+                                    cy="140"
+                                    rx="14"
+                                    ry="33"
+                                    transform="rotate(-27 137 140)"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </div>
+
+                        <!-- =================================================
+                     HERO
+                ================================================== -->
+
+                        <section class="hero-scene">
+                            <!-- Botanical illustration -->
+
+                            <svg class="hero-botanical" viewBox="0 0 240 420" aria-hidden="true">
+                                <path
+                                    d="M120 410 C120 270 105 160 30 35"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+
+                                <ellipse
+                                    cx="84"
+                                    cy="260"
+                                    rx="18"
+                                    ry="42"
+                                    transform="rotate(-32 84 260)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="92"
+                                    cy="215"
+                                    rx="18"
+                                    ry="40"
+                                    transform="rotate(32 92 215)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="61"
+                                    cy="171"
+                                    rx="15"
+                                    ry="35"
+                                    transform="rotate(-35 61 171)"
+                                    fill="currentColor"
+                                />
+
+                                <ellipse
+                                    cx="70"
+                                    cy="130"
+                                    rx="16"
+                                    ry="35"
+                                    transform="rotate(35 70 130)"
+                                    fill="currentColor"
+                                />
+                            </svg>
+
+                            <!-- Couple illustration -->
+
+                            <div class="hero-illustration">
+                                <div class="illustration-glow"></div>
+
+                                <img
+                                    src="assets/images/couple-illustration.png"
+                                    alt="Illustration of us"
+                                />
+                            </div>
+
+                            <!-- Hero copy -->
+
+                            <div class="hero-copy">
+                                <p class="hero-kicker">A LITTLE PLACE WE MADE</p>
+
+                                <h1>
+                                    Everything
+                                    <span>we kept.</span>
+                                </h1>
+
+                                <p class="hero-description">
+                                    Photographs, letters, ordinary days, tiny moments and all the
+                                    pieces of our story that deserve to stay.
+                                </p>
+
+                                <div class="hero-divider">
+                                    <span></span>
+
+                                    <span class="heart"> ♡ </span>
+
+                                    <span></span>
+                                </div>
+
+                                <p class="hero-note">scroll slowly · there is more below</p>
+                            </div>
+
+                            <!-- Hero pinned photograph -->
+
+                            <div class="hero-polaroid hero-polaroid-one">
+                                <span class="pin pin-rose"></span>
+
+                                <div class="polaroid-image sample-sky">
+                                    <span>memory</span>
+                                </div>
+
+                                <p class="polaroid-date">21 SEP 2026</p>
+                            </div>
+
+                            <!-- Hero paper -->
+
+                            <div class="hero-note-paper">
+                                <span class="pin pin-brown"></span>
+
+                                <p>
+                                    Some people make life feel like a beautiful place just by being
+                                    in it.
+                                </p>
+
+                                <span class="paper-heart"> ♡ </span>
+
+                                <small> 18 SEP 2026 </small>
+                            </div>
+                        </section>
+
+                        <!-- =================================================
+                     CHRONOLOGICAL WALL
+                ================================================== -->
+                        <!-- =================================================
+     CHRONOLOGICAL MEMORY WALL
+================================================== -->
+
+<section class="wall-memories" id="wall-memories">
+
+    <!-- =================================================
+         ILLUSTRATED BRICK STRUCTURE
+
+         These are real HTML brick elements.
+         They sit behind the memories.
+    ================================================== -->
+
+   <div class="wall-brick-structure" aria-hidden="true">
+    <div class="wall-brick-grid" id="wall-brick-grid"></div>
+</div>
+
+
+    <!-- =================================================
+         DYNAMIC MEMORY LAYER
+
+         JavaScript puts all date segments here.
+    ================================================== -->
+
+    <div
+        class="wall-memory-layer"
+        id="wall-memory-layer"
+    ></div>
+
+</section>
+                    </section>
+                </main>
+
+                <!-- =================================================
+             FUTURE VIEWS
+        ================================================== -->
+
+                <section class="view-placeholder" id="timeline-view">
+                    <div>
+                        <p>OUR JOURNEY</p>
+
+                        <h2>Every chapter has a place.</h2>
+                    </div>
+                </section>
+
+                <section class="view-placeholder" id="letters-view">
+                    <div>
+                        <p>LETTERS & POEMS</p>
+
+                        <h2>Words we chose to keep.</h2>
+                    </div>
+                </section>
+
+                <section class="view-placeholder" id="room-view">
+                    <div>
+                        <p>OUR ROOM</p>
+
+                        <h2>Just us, in real time.</h2>
+                    </div>
+                </section>
+
+                <!-- =================================================
+     SETTINGS / ACCOUNT
+================================================== -->
+
+<section class="view-placeholder settings-view" id="settings-view">
+
+    <div class="settings-shell">
+
+        <div class="settings-heading">
+            <p class="settings-eyebrow">
+                ACCOUNT
+            </p>
+
+            <h2>
+                Your place,
+                <br>
+                your account.
+            </h2>
+
+            <p class="settings-intro">
+                This is the account that keeps your private archive connected.
+            </p>
+        </div>
+
+
+        <div class="settings-panel">
+
+            <div class="settings-row account-row">
+
+                <div class="settings-row-label">
+                    <span class="settings-label">
+                        ACCOUNT
+                    </span>
+
+                    <strong>
+                        Signed in
+                    </strong>
+                </div>
+
+                <p
+                    class="settings-account-email"
+                    id="accountEmail"
+                >
+                    Loading account…
+                </p>
+
+            </div>
+
+
+            <div class="settings-divider"></div>
+
+
+            <div class="settings-row">
+
+                <div class="settings-row-label">
+                    <span class="settings-label">
+                        SESSION
+                    </span>
+
+                    <strong>
+                        Private session
+                    </strong>
+                </div>
+
+                <button
+                    class="settings-signout"
+                    id="signOutButton"
+                    type="button"
+                >
+                    <span>
+                        Sign out
+                    </span>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <p class="settings-footnote">
+            Your memories stay private to your authenticated account.
+        </p>
+
+    </div>
+
+</section>
+            </div>
+        </div>
+
+        <!-- =========================================================
+     MEMORY DETAIL OVERLAY
+========================================================= -->
+
+        <div class="memory-overlay" id="memoryOverlay" aria-hidden="true">
+            <div class="memory-overlay-backdrop"></div>
+
+            <div
+    class="memory-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Memory details"
+>
+                <!-- Close -->
+
+                <button
+                    class="memory-close"
+                    id="memoryClose"
+                    type="button"
+                    aria-label="Close memory"
+                >
+                    ×
+                </button>
+
+                <!-- Dynamic content -->
+
+                <div class="memory-modal-content" id="memoryModalContent">
+                    <!-- JavaScript fills this -->
+                </div>
+
+                <!-- =================================================
+     MEMORY ACTIONS
+================================================== -->
+
+                <div class="memory-modal-actions">
+                    <button class="memory-action-edit" id="editMemoryButton" type="button">
+                        Edit memory
+                    </button>
+
+                    <button class="memory-action-delete" id="deleteMemoryButton" type="button">
+                        Delete
+                    </button>
+                </div>
+
+                <!-- Navigation -->
+
+                <div class="memory-modal-navigation">
+                    <button class="memory-modal-nav" id="previousMemory" type="button">
+                        ← Previous
+                    </button>
+
+                    <span class="memory-modal-counter"> MEMORY </span>
+
+                    <button class="memory-modal-nav" id="nextMemory" type="button">Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================
+     ADD MEMORY COMPOSER
+========================================================= -->
+
+        <div class="composer-overlay" id="composerOverlay" aria-hidden="true">
+            <div class="composer-backdrop"></div>
+
+            <section
+                class="composer-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="composerTitle"
+            >
+                <!-- =============================================
+             COMPOSER HEADER
+        ============================================== -->
+
+                <div class="composer-header">
+                    <div>
+                        <p class="composer-kicker">ADD TO OUR ARCHIVE</p>
+
+                        <h2 id="composerTitle">Keep a memory.</h2>
+                    </div>
+
+                    <button
+                        class="composer-close"
+                        id="composerClose"
+                        type="button"
+                        aria-label="Close add memory"
+                    >
+                        ×
+                    </button>
+                </div>
+
+                <!-- =============================================
+             MEMORY TYPE
+        ============================================== -->
+
+                <div class="composer-section">
+                    <p class="composer-section-label">What are you keeping?</p>
+
+                    <div class="memory-type-grid" id="memoryTypeGrid">
+                        <button
+                            class="memory-type-option active"
+                            type="button"
+                            data-memory-type="photo"
+                        >
+                            <span class="type-symbol"> ▧ </span>
+
+                            <span class="type-name"> Photograph </span>
+
+                            <span class="type-description"> One image </span>
+                        </button>
+
+                        <button class="memory-type-option" type="button" data-memory-type="poem">
+                            <span class="type-symbol"> Aa </span>
+
+                            <span class="type-name"> Poem </span>
+
+                            <span class="type-description"> Something written </span>
+                        </button>
+
+                        <button class="memory-type-option" type="button" data-memory-type="note">
+                            <span class="type-symbol"> — </span>
+
+                            <span class="type-name"> Note </span>
+
+                            <span class="type-description"> A little thought </span>
+                        </button>
+
+                        <button class="memory-type-option" type="button" data-memory-type="letter">
+                            <span class="type-symbol"> ✉ </span>
+
+                            <span class="type-name"> Letter </span>
+
+                            <span class="type-description"> A longer message </span>
+                        </button>
+
+                        <button
+                            class="memory-type-option"
+                            type="button"
+                            data-memory-type="photo-cluster"
+                        >
+                            <span class="type-symbol"> ▦ </span>
+
+                            <span class="type-name"> Photos </span>
+
+                            <span class="type-description"> A little collection </span>
+                        </button>
+
+                        <button
+                            class="memory-type-option"
+                            type="button"
+                            data-memory-type="milestone"
+                        >
+                            <span class="type-symbol"> ♡ </span>
+
+                            <span class="type-name"> Milestone </span>
+
+                            <span class="type-description"> A chapter </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- =============================================
+             MEMORY DATE
+        ============================================== -->
+
+                <div class="composer-section">
+                    <div class="composer-field-grid">
+                        <label class="composer-field">
+                            <span> When did it happen? </span>
+
+                            <input type="date" id="memoryDate" required />
+                        </label>
+
+                        <label class="composer-field">
+                            <span> What time? </span>
+
+                            <input type="time" id="memoryTime" required />
+                        </label>
+                    </div>
+
+                    <p class="composer-helper">
+                        This is the date and time that will determine where the memory belongs on
+                        the wall.
+                    </p>
+                </div>
+
+                <!-- =============================================
+             DYNAMIC MEMORY FIELDS
+        ============================================== -->
+
+                <div class="composer-section" id="composerDynamicFields">
+                    <!-- JavaScript fills this -->
+                </div>
+
+                <!-- =============================================
+             ACTIONS
+        ============================================== -->
+
+                <div class="composer-actions">
+                    <button class="composer-cancel" id="composerCancel" type="button">
+                        Cancel
+                    </button>
+
+                    <button class="composer-save" id="composerSave" type="button">
+                        <span> Pin to wall </span>
+
+                        <span> → </span>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+     DELETE CONFIRMATION
+========================================================= -->
+
+        <div class="delete-overlay" id="deleteOverlay" aria-hidden="true">
+            <div class="delete-backdrop"></div>
+
+            <section
+                class="delete-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="deleteTitle"
+            >
+                <button
+                    class="delete-close"
+                    id="deleteClose"
+                    type="button"
+                    aria-label="Close delete confirmation"
+                >
+                    ×
+                </button>
+
+                <p class="delete-kicker">PERMANENT ACTION</p>
+
+                <h2 id="deleteTitle">Remove this memory?</h2>
+
+                <p class="delete-memory-name" id="deleteMemoryName"></p>
+
+                <p class="delete-warning">
+                    This will remove the memory from the archive. A separate Delete ID password is
+                    required.
+                </p>
+
+                <label class="delete-password-field">
+                    <span> Delete ID password </span>
+
+                    <input
+                        type="password"
+                        id="deletePassword"
+                        autocomplete="off"
+                        placeholder="Enter your Delete ID"
+                    />
+                </label>
+
+                <p class="delete-error" id="deleteError" aria-live="polite"></p>
+
+                <div class="delete-actions">
+                    <button class="delete-cancel" id="deleteCancel" type="button">
+                        Keep memory
+                    </button>
+
+                    <button class="delete-confirm" id="deleteConfirm" type="button">
+                        Delete permanently
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================================
+     SUPABASE
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/main.js"></script>
+
+
+    </body>
+</html>
