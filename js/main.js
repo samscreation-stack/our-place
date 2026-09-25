@@ -22,102 +22,8 @@
     uploadDate is intentionally separate.
 */
 
-const memories = [
-  {
-    id: 1,
-    type: "photo",
-    title: "One of those evenings.",
-    description: "Nothing extraordinary. That's why I remember it.",
-    memoryDate: "2026-09-18T19:30:00",
-    uploadDate: "2026-09-18T20:02:00",
-    color: "landscape",
-  },
 
-  {
-    id: 2,
-    type: "note",
-    title: "",
-    description: "I hope we never become too busy to notice little things like this.",
-    memoryDate: "2026-09-14T16:20:00",
-    uploadDate: "2026-09-20T11:12:00",
-  },
-
-  {
-    id: 3,
-    type: "poem",
-    title: "For you",
-    description: "Even the smallest moments with you feel like big dreams.",
-    memoryDate: "2026-08-14T22:10:00",
-    uploadDate: "2026-09-01T09:10:00",
-  },
-
-  {
-    id: 4,
-    type: "photo",
-    title: "",
-    description: "",
-    memoryDate: "2026-08-07T17:45:00",
-    uploadDate: "2026-08-09T12:00:00",
-    color: "green",
-  },
-
-  {
-    id: 5,
-    type: "letter",
-    title: "To the version of us who hasn't arrived yet",
-    description:
-      "There will be days we forget. I hope this little place remembers them for us.",
-    memoryDate: "2026-06-12T21:15:00",
-    uploadDate: "2026-09-21T22:00:00",
-  },
-
-  {
-    id: 6,
-    type: "photo-cluster",
-    title: "Three little moments",
-    description: "Three photographs from one very ordinary day.",
-    memoryDate: "2026-05-18T17:40:00",
-    uploadDate: "2026-05-19T09:00:00",
-    color: "mixed",
-  },
-
-  {
-    id: 7,
-    type: "milestone",
-    title: "A chapter worth remembering",
-    description: "Some days quietly change the shape of everything that comes after them.",
-    memoryDate: "2026-03-20T18:00:00",
-    uploadDate: "2026-09-21T23:10:00",
-  },
-
-  {
-    id: 8,
-    type: "note",
-    title: "",
-    description: "Same sky. Different place. Still us.",
-    memoryDate: "2026-05-01T18:00:00",
-    uploadDate: "2026-09-18T13:00:00",
-  },
-
-  {
-    id: 9,
-    type: "photo",
-    title: "The beginning.",
-    description: "Keep this one.",
-    memoryDate: "2026-01-01T08:00:00",
-    uploadDate: "2026-09-21T23:00:00",
-    color: "room",
-  },
-
-  {
-    id: 10,
-    type: "note",
-    title: "",
-    description: "You. me. and a million beautiful tomorrows.",
-    memoryDate: "2026-01-01T21:30:00",
-    uploadDate: "2026-09-21T23:10:00",
-  },
-];
+const memories = [];
 
 /* =========================================================
    MEMORY COMPOSER STATE
@@ -140,39 +46,21 @@ const DEMO_DELETE_ID = "ourplace";
    APP START
 ========================================================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  async () => {
-    setupNavigation();
-    setupAccountSettings();
-    setupMemoryButton();
-    setupMemoryOverlay();
-    setupComposer();
-    setupDeleteSystem();
-    setupMemoryEditing();
-    setupBrickWallObserver();
+document.addEventListener("DOMContentLoaded", async () => {
+  setupNavigation();
 
-    renderWall();
-    await loadMemoriesFromSupabase();
+  setupMemoryButton();
 
-    const supabase = window.ourPlaceSupabase;
+  setupMemoryOverlay();
 
-    if (supabase) {
-      supabase.auth.onAuthStateChange((event) => {
-        if (event === "SIGNED_IN") {
-          setTimeout(() => {
-            loadMemoriesFromSupabase();
-          }, 0);
-        }
+  setupComposer();
 
-        if (event === "SIGNED_OUT") {
-          memories.splice(0, memories.length);
-          renderWall();
-        }
-      });
-    }
-  }
-);
+  setupDeleteSystem();
+
+  setupMemoryEditing();
+
+  await loadMemoriesFromSupabase();
+});
 
 /* =========================================================
    NAVIGATION
@@ -341,57 +229,6 @@ function supabaseAuthAccountListener() {
   );
 }
 
-function renderBrickWall() {
-  const wall = document.getElementById("wall-memories");
-  const brickGrid = document.getElementById("wall-brick-grid");
-
-  if (!wall || !brickGrid) return;
-
-  brickGrid.innerHTML = "";
-
-  const wallHeight = Math.max(
-    wall.scrollHeight,
-    wall.clientHeight
-  );
-
-  const rowHeight = window.innerWidth <= 700 ? 39 : 50;
-  const rowCount = Math.ceil(wallHeight / rowHeight) + 4;
-
-  for (let rowIndex = 0; rowIndex < rowCount; rowIndex += 1) {
-    const row = document.createElement("div");
-
-    row.className =
-      rowIndex % 2 === 0
-        ? "wall-brick-row"
-        : "wall-brick-row offset";
-
-    const brickCount =
-      window.innerWidth <= 700 ? 8 : 12;
-
-    for (let brickIndex = 0; brickIndex < brickCount; brickIndex += 1) {
-      const brick = document.createElement("span");
-      brick.className = "wall-brick";
-
-      row.appendChild(brick);
-    }
-
-    brickGrid.appendChild(row);
-  }
-}
-
-let wallBrickResizeObserver = null;
-
-function setupBrickWallObserver() {
-  const wallLayer = document.getElementById("wall-memory-layer");
-
-  if (!wallLayer || wallBrickResizeObserver) return;
-
-  wallBrickResizeObserver = new ResizeObserver(() => {
-    renderBrickWall();
-  });
-
-  wallBrickResizeObserver.observe(wallLayer);
-}
 
 /* =========================================================
    MEMORY WALL

@@ -4878,99 +4878,39 @@ body.auth-ready .site {
 }
 
 /* =========================================================
-   HTML ILLUSTRATED BRICK WALL
-   Flat / soft / UI-matched texture
+   OUR PLACE — WALL SURFACE
 ========================================================= */
 
 .wall-memories {
   position: relative;
   overflow: hidden;
+
+  background-color: #e8ddd0;
+
+  background-image: url("../assets/images/wall-texture.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
 }
 
-.wall-brick-structure {
+/* Softens the texture slightly so memories remain dominant */
+
+.wall-memories::before {
+  content: "";
+
   position: absolute;
   inset: 0;
+
   z-index: 0;
+
   pointer-events: none;
-  overflow: hidden;
+
+  background: rgba(246, 239, 231, 0.10);
 }
 
-.wall-brick-grid {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 6px 0 100px;
-}
-
-.wall-brick-row {
-  display: flex;
-  gap: 6px;
-  width: max-content;
-  flex: 0 0 44px;
-  transform: translateX(-22px);
-}
-
-.wall-brick-row.offset {
-  transform: translateX(-72px);
-}
-
-.wall-brick {
-  display: block;
-  flex: 0 0 118px;
-  height: 44px;
-
-  background: #e6d9cb;
-
-  border: 1px solid rgba(110, 88, 70, 0.08);
-  border-radius: 2px;
-}
-
-.wall-brick-row:nth-child(3n) .wall-brick {
-  background: #e3d5c6;
-}
-
-.wall-brick-row:nth-child(4n) .wall-brick {
-  background: #e9ddd1;
-}
-
-.wall-brick-grid::after {
-  content: "";
-  display: block;
-  height: 80px;
-}
+/* Memories stay above the wall */
 
 .wall-memory-layer {
   position: relative;
   z-index: 2;
-}
-
-.memory-date-segment {
-  position: relative;
-  z-index: 3;
-}
-
-
-@media (max-width: 700px) {
-
-  .wall-brick-grid {
-    gap: 5px;
-    padding-top: 5px;
-  }
-
-  .wall-brick-row {
-    gap: 5px;
-    flex-basis: 34px;
-    transform: translateX(-14px);
-  }
-
-  .wall-brick-row.offset {
-    transform: translateX(-48px);
-  }
-
-  .wall-brick {
-    flex-basis: 88px;
-    height: 34px;
-  }
 }
